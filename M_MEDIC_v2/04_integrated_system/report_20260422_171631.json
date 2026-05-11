@@ -1,0 +1,14 @@
+{
+  "mode": "wound",
+  "prediction": "Pressure_Wounds",
+  "confidence": 0.49744370579719543,
+  "low_confidence": true,
+  "name": "욕창/압박성 궤양(Pressure Wounds)",
+  "risk": "HIGH",
+  "action": "상처 부위 압박 완전 제거. 2시간마다 자세 변경. 습윤 드레싱 적용. 육지 전원 권고.",
+  "law_ref": "WHO 선내의료지침 Ch.7",
+  "timestamp": "2026-04-22 17:16:31",
+  "image": "D:\\GeminiUniverse\\vscode-workspace\\wip-maritime-medic\\M_MEDIC_v2\\01_data\\raw\\wound_segmentation\\data_wound_seg\\train_images\\fusc_0081.png",
+  "patient_age": 45.0,
+  "patient_gender": "unknown"
+}

@@ -1,0 +1,8 @@
+echo '--- Checking Ollama Service ---'
+systemctl is-active ollama || echo 'Ollama is NOT running'
+echo '--- Checking FastAPI Backend ---'
+ps aux | grep -i 'm_medic_server.py' | grep -v grep || echo 'Backend is NOT running'
+echo '--- Checking Frontend (Vite) ---'
+ps aux | grep -i 'vite' | grep -v grep || echo 'Frontend is NOT running'
+echo '--- Checking MobileNet Model File ---'
+ls -l /home/jetson/mobilenet_v3_wound_best.pth || echo 'Model file NOT found'

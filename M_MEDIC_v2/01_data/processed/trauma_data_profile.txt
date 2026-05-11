@@ -1,0 +1,35 @@
+==================================================
+ M-Medic v2 Trauma Data Profiling Report
+==================================================
+
+[1. Wound Type Distribution]
+     Class  Count
+ Abrasions    249
+   Bruises    364
+     Burns    193
+       Cut    150
+Laceration    183
+Stab_wound     23
+
+Total Primary Images: 1162
+
+[2. Extra Burn Data]
+Additional Burn Images: 1225
+
+[3. Image Properties (Sampling)]
+    Class       Size Format Mode
+Abrasions (640, 640)   JPEG  RGB
+Abrasions (640, 640)   JPEG  RGB
+Abrasions (640, 640)   JPEG  RGB
+Abrasions (640, 640)   JPEG  RGB
+Abrasions (640, 640)   JPEG  RGB
+  Bruises (640, 640)   JPEG  RGB
+  Bruises (640, 640)   JPEG  RGB
+  Bruises (640, 640)   JPEG  RGB
+  Bruises (640, 640)   JPEG  RGB
+  Bruises (640, 640)   JPEG  RGB
+    Burns (640, 640)   JPEG  RGB
+    Burns (640, 640)   JPEG  RGB
+    Burns (640, 640)   JPEG  RGB
+    Burns (640, 640)   JPEG  RGB
+    Burns (640, 640)   JPEG  RGB

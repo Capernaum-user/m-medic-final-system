@@ -1,0 +1,15 @@
+{
+  "name": "멜라닌세포모반(점)",
+  "risk": "LOW",
+  "action": "일반적인 점. 비대칭/색변화 시 재진단. 특별 처치 불필요.",
+  "law_ref": "WHO 선내의료지침 Ch.4",
+  "mode": "skin",
+  "prediction": "demo",
+  "confidence": 0.91,
+  "low_confidence": false,
+  "top3": [],
+  "timestamp": "2026-04-15 10:24:19",
+  "image": "sample_nv.jpg",
+  "patient_age": 28,
+  "patient_gender": "female"
+}

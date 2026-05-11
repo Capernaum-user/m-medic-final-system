@@ -1,0 +1,14 @@
+{
+  "mode": "wound",
+  "prediction": "Laceration",
+  "confidence": 0.9375282526016235,
+  "low_confidence": false,
+  "name": "열상(Laceration)",
+  "risk": "HIGH",
+  "action": "지혈 및 세척. 깊이 1cm 이상 시 봉합 필수. 감염 주의.",
+  "law_ref": "선원법 시행규칙 [별표 5의5]",
+  "timestamp": "2026-04-22 17:51:38",
+  "image": "D:\\GeminiUniverse\\vscode-workspace\\wip-maritime-medic\\M_MEDIC_v2\\01_data\\raw\\wound_classification\\Laceration\\laseration (1).jpg",
+  "patient_age": 45.0,
+  "patient_gender": "unknown"
+}

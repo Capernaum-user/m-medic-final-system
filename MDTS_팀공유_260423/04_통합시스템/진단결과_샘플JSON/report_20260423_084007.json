@@ -1,0 +1,14 @@
+{
+  "mode": "wound",
+  "prediction": "Stab_wound",
+  "confidence": 0.9517350792884827,
+  "low_confidence": false,
+  "name": "자창(Stab Wound)",
+  "risk": "CRITICAL",
+  "action": "박힌 물체 제거 금지. 즉시 병원 이송. 내부 손상 확인 필수.",
+  "law_ref": "선원법 시행규칙 [별표 5의5]",
+  "timestamp": "2026-04-23 08:40:07",
+  "image": "D:\\GeminiUniverse\\vscode-workspace\\wip-maritime-medic\\M_MEDIC_v2\\01_data\\raw\\wound_classification\\Stab_wound\\stab_aug_0_stab_wound (3).jpg",
+  "patient_age": 45.0,
+  "patient_gender": "unknown"
+}

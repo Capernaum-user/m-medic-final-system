@@ -1,0 +1,104 @@
+{
+  "ok": true,
+  "filename": "burns (2).jpg",
+  "timestamp": "2026-04-29 09:40:00",
+  "dl": {
+    "prediction": "Burns",
+    "model_prediction": "Burns",
+    "display_name": "화상(Burns)",
+    "model_display_name": "화상(Burns)",
+    "confidence": 1.0,
+    "confidence_percent": 100.0,
+    "top2_margin": 1.0,
+    "top2_margin_percent": 100.0,
+    "low_confidence": false,
+    "ambiguous_prediction": false,
+    "out_of_distribution": false,
+    "is_unknown": false,
+    "in_distribution_similarity": 0.73127681016922,
+    "in_distribution_similarity_percent": 73.127681016922,
+    "predicted_class_similarity": 0.73127681016922,
+    "predicted_class_similarity_percent": 73.127681016922,
+    "ood_reference_loaded": true,
+    "ood_similarity_threshold": 0.5,
+    "warning_reasons": [],
+    "warning_message": "",
+    "risk": "HIGH",
+    "risk_score": 3,
+    "action": "20분 이상 냉각. 수포 파열 금지. 2도 이상이 의심되면 의료기관 이송.",
+    "law_ref": "선원법 시행규칙 [별표 5의5] 화상처치",
+    "expected_accidents": [
+      "화재",
+      "기관손상"
+    ],
+    "top3": [
+      {
+        "class_name": "Burns",
+        "display_name": "화상(Burns)",
+        "confidence": 1.0,
+        "confidence_percent": 100.0
+      },
+      {
+        "class_name": "Abrasions",
+        "display_name": "찰과상(Abrasions)",
+        "confidence": 1.6013604664522063e-08,
+        "confidence_percent": 1.6013604664522063e-06
+      },
+      {
+        "class_name": "Bruises",
+        "display_name": "타박상(Bruises)",
+        "confidence": 8.5182847442411e-09,
+        "confidence_percent": 8.5182847442411e-07
+      }
+    ],
+    "device": "cpu"
+  },
+  "ml": {
+    "input": {
+      "연도": "2026",
+      "사고유형": "기관손상",
+      "선박종류": "어선",
+      "사고원인": "기계결함",
+      "발생해역": "남해"
+    },
+    "casualty_probability": 0.2280499078855415,
+    "casualty_probability_percent": 22.80499078855415,
+    "predicted_casualty": false,
+    "risk": "LOW",
+    "risk_score": 1,
+    "feature_importance": {
+      "연도": 0.13361415435450766,
+      "사고유형": 0.3643456212197338,
+      "선박종류": 0.2616930288582909,
+      "사고원인": 0.13097972605037617,
+      "발생해역": 0.10936746951709161
+    },
+    "year_range": [
+      2019,
+      2024
+    ],
+    "error": null
+  },
+  "final": {
+    "is_unknown": false,
+    "risk": "MEDIUM",
+    "risk_score": 2.164879852616866,
+    "final_score": 2.164879852616866,
+    "final_score_percent": 54.12199631542165,
+    "dl_weight": 0.6,
+    "ml_weight": 0.4,
+    "dl_score_norm": 0.75,
+    "ml_score_norm": 0.2280499078855415,
+    "dl_risk": "HIGH",
+    "ml_risk": "LOW",
+    "summary": "DL 외상 분류: 화상(Burns) (위험도 HIGH) / ML 사상자 발생 확률: 22.80% (위험도 LOW) / 종합 위험등급: MEDIUM (가중 점수 2.16/4.00)",
+    "summary_lines": [
+      "DL 외상 분류: 화상(Burns) (위험도 HIGH)",
+      "ML 사상자 발생 확률: 22.80% (위험도 LOW)",
+      "종합 위험등급: MEDIUM (가중 점수 2.16/4.00)"
+    ],
+    "action": "선내에서 1차 처치 후 24시간 내 의료진 자문 권고. 감염·통증 관찰.",
+    "law_ref": "선원법 시행규칙 [별표 5의5] 화상처치",
+    "wound_action": "20분 이상 냉각. 수포 파열 금지. 2도 이상이 의심되면 의료기관 이송."
+  }
+}

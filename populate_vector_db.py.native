@@ -1,0 +1,66 @@
+import chromadb
+import os
+import sys
+import re
+import requests
+
+# ─── 경로 및 설정 ────────────────────────────────────────────────────────
+CHROMA_PATH = "/home/jetson/remote_vector_db"
+COLLECTION_NAME = "medical_knowledge"
+OLLAMA_EMBED_URL = "http://localhost:11434/api/embeddings"
+EMBED_MODEL = "nomic-embed-text"
+
+def get_embedding(text):
+    res = requests.post(OLLAMA_EMBED_URL, json={"model": EMBED_MODEL, "prompt": text})
+    return res.json()['embedding']
+
+# ─── 1. 데이터 소스: Emergency.jsx에서 지침 추출 ──────────────────────────
+def extract_from_jsx(file_path):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    guides = []
+    pattern = re.compile(r"'([^']+)':\s*{\s*title:\s*'([^']+)',\s*description:\s*'([^']+)'")
+    matches = pattern.findall(content)
+    for name, title, desc in matches:
+        text = f"상황: {name}\n제목: {title}\n설명: {desc}\n"
+        step_pattern = re.compile(rf"'{name}':.*?steps:\s*\[(.*?)\]", re.DOTALL)
+        step_match = step_pattern.search(content)
+        if step_match:
+            steps_text = step_match.group(1)
+            titles = re.findall(r"title:\s*'([^']+)'", steps_text)
+            descs = re.findall(r"desc:\s*'([^']+)'", steps_text)
+            for i, (st, sd) in enumerate(zip(titles, descs)):
+                text += f"단계 {i+1}: {st} - {sd}\n"
+        guides.append({"id": f"gui_{name}", "text": text, "metadata": {"source": "dashboard_gui", "category": name}})
+    return guides
+
+def main():
+    print(f"[*] Initializing Vector DB with Ollama Embeddings...")
+    try:
+        client = chromadb.PersistentClient(path=CHROMA_PATH)
+        # 기존 데이터 삭제 후 nomic-embed-text로 다시 생성 (차원 수가 다를 수 있음)
+        try: client.delete_collection(name=COLLECTION_NAME)
+        except: pass
+        collection = client.create_collection(name=COLLECTION_NAME)
+        
+        all_docs = []
+        jsx_path = "/home/jetson/m_medic_latest/src/pages/Emergency.jsx"
+        if os.path.exists(jsx_path): all_docs.extend(extract_from_jsx(jsx_path))
+        
+        if not all_docs: return
+
+        print(f"[*] Indexing {len(all_docs)} documents using Ollama...")
+        ids, texts, metadatas, embeddings = [], [], [], []
+        for d in all_docs:
+            ids.append(d['id'])
+            texts.append(d['text'])
+            metadatas.append(d['metadata'])
+            embeddings.append(get_embedding(d['text']))
+        
+        collection.add(ids=ids, documents=texts, metadatas=metadatas, embeddings=embeddings)
+        print(f"[+] Successfully indexed documents with nomic-embed-text!")
+    except Exception as e:
+        print(f"[!] Error: {e}")
+
+if __name__ == "__main__":
+    main()

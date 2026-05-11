@@ -1,0 +1,104 @@
+{
+  "ok": true,
+  "filename": "KakaoTalk_20260429_091434979_02.jpg",
+  "timestamp": "2026-04-29 09:39:12",
+  "dl": {
+    "prediction": "Bruises",
+    "model_prediction": "Bruises",
+    "display_name": "타박상(Bruises)",
+    "model_display_name": "타박상(Bruises)",
+    "confidence": 0.9995684027671814,
+    "confidence_percent": 99.95684027671814,
+    "top2_margin": 0.9992966651916504,
+    "top2_margin_percent": 99.92966651916504,
+    "low_confidence": false,
+    "ambiguous_prediction": false,
+    "out_of_distribution": false,
+    "is_unknown": false,
+    "in_distribution_similarity": 0.6612928509712219,
+    "in_distribution_similarity_percent": 66.12928509712219,
+    "predicted_class_similarity": 0.6612928509712219,
+    "predicted_class_similarity_percent": 66.12928509712219,
+    "ood_reference_loaded": true,
+    "ood_similarity_threshold": 0.5,
+    "warning_reasons": [],
+    "warning_message": "",
+    "risk": "LOW",
+    "risk_score": 1,
+    "action": "초기 48시간 냉찜질. 부종과 통증이 심하면 골절 여부 확인.",
+    "law_ref": "선원법 시행규칙 [별표 5의5]",
+    "expected_accidents": [
+      "충돌",
+      "좌초"
+    ],
+    "top3": [
+      {
+        "class_name": "Bruises",
+        "display_name": "타박상(Bruises)",
+        "confidence": 0.9995684027671814,
+        "confidence_percent": 99.95684027671814
+      },
+      {
+        "class_name": "Burns",
+        "display_name": "화상(Burns)",
+        "confidence": 0.000271713943220675,
+        "confidence_percent": 0.0271713943220675
+      },
+      {
+        "class_name": "Stab_wound",
+        "display_name": "자창(Stab Wound)",
+        "confidence": 0.00012338807573542,
+        "confidence_percent": 0.012338807573541999
+      }
+    ],
+    "device": "cpu"
+  },
+  "ml": {
+    "input": {
+      "연도": "2026",
+      "사고유형": "기관손상",
+      "선박종류": "어선",
+      "사고원인": "기계결함",
+      "발생해역": "남해"
+    },
+    "casualty_probability": 0.2280499078855415,
+    "casualty_probability_percent": 22.80499078855415,
+    "predicted_casualty": false,
+    "risk": "LOW",
+    "risk_score": 1,
+    "feature_importance": {
+      "연도": 0.13361415435450766,
+      "사고유형": 0.3643456212197338,
+      "선박종류": 0.2616930288582909,
+      "사고원인": 0.13097972605037617,
+      "발생해역": 0.10936746951709161
+    },
+    "year_range": [
+      2019,
+      2024
+    ],
+    "error": null
+  },
+  "final": {
+    "is_unknown": false,
+    "risk": "LOW",
+    "risk_score": 0.9648798526168664,
+    "final_score": 0.9648798526168664,
+    "final_score_percent": 24.121996315421658,
+    "dl_weight": 0.6,
+    "ml_weight": 0.4,
+    "dl_score_norm": 0.25,
+    "ml_score_norm": 0.2280499078855415,
+    "dl_risk": "LOW",
+    "ml_risk": "LOW",
+    "summary": "DL 외상 분류: 타박상(Bruises) (위험도 LOW) / ML 사상자 발생 확률: 22.80% (위험도 LOW) / 종합 위험등급: LOW (가중 점수 0.96/4.00)",
+    "summary_lines": [
+      "DL 외상 분류: 타박상(Bruises) (위험도 LOW)",
+      "ML 사상자 발생 확률: 22.80% (위험도 LOW)",
+      "종합 위험등급: LOW (가중 점수 0.96/4.00)"
+    ],
+    "action": "현장 처치 후 경과 관찰. 악화 시 즉시 재평가.",
+    "law_ref": "선원법 시행규칙 [별표 5의5]",
+    "wound_action": "초기 48시간 냉찜질. 부종과 통증이 심하면 골절 여부 확인."
+  }
+}

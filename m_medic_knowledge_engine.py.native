@@ -1,0 +1,63 @@
+import os
+import requests
+import json
+
+# ─── 경로 및 설정 ────────────────────────────────────────────────────────
+CHROMA_PATH = "/home/jetson/remote_vector_db"
+COLLECTION_NAME = "medical_knowledge"
+OLLAMA_EMBED_URL = "http://localhost:11434/api/embeddings"
+EMBED_MODEL = "nomic-embed-text"
+
+class MedicalKnowledgeEngine:
+    def __init__(self):
+        print(f"[*] 지식 엔진 초기화 중 (Ollama 임베딩 사용)...")
+        self.db_path = CHROMA_PATH
+        # Ollama nomic-embed-text를 사용하여 임베딩 수행
+        # 전용 임베딩 클래스 정의 (LangChain 호환용)
+        class OllamaEmbeddings:
+            def embed_documents(self, texts):
+                return [self._embed(t) for text in texts]
+            def embed_query(self, text):
+                return self._embed(text)
+            def _embed(self, text):
+                res = requests.post(OLLAMA_EMBED_URL, json={"model": EMBED_MODEL, "prompt": text})
+                return res.json()['embedding']
+        
+        # 실제로는 chromadb 라이브러리를 직접 사용하여 torch 의존성 제거
+        import chromadb
+        self.client = chromadb.PersistentClient(path=self.db_path)
+        self.collection = self.client.get_or_create_collection(name=COLLECTION_NAME)
+        print(f"[*] Vector DB 로드 완료 (ChromaDB Native)")
+
+    def _get_embedding(self, text):
+        """Ollama API를 통해 텍스트의 임베딩 벡터를 구합니다."""
+        try:
+            res = requests.post(OLLAMA_EMBED_URL, json={"model": EMBED_MODEL, "prompt": text}, timeout=10)
+            if res.status_code == 200:
+                return res.json()['embedding']
+        except Exception as e:
+            print(f"[!] Embedding Error: {e}")
+        return None
+
+    def search_relevant_docs(self, query, k=2):
+        """질문과 가장 유사한 지침 내용을 찾아옵니다."""
+        try:
+            query_embedding = self._get_embedding(query)
+            if query_embedding is None: return ""
+
+            results = self.collection.query(
+                query_embeddings=[query_embedding],
+                n_results=k
+            )
+            
+            docs = results.get('documents', [[]])[0]
+            context = "\n\n".join(docs)
+            print(f"[*] 지식 베이스 검색 완료 (관련 문서 {len(docs)}개 발견)")
+            return context
+        except Exception as e:
+            print(f"[!] 검색 중 에러 발생: {e}")
+            return ""
+
+if __name__ == "__main__":
+    engine = MedicalKnowledgeEngine()
+    print(engine.search_relevant_docs("화상 처치"))

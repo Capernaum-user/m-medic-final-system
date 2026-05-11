@@ -1,0 +1,32 @@
+# Logs
+*.log
+frontend.log
+backend.log
+lt.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Node
+node_modules/
+dist/
+.env.local
+
+# Project Specific
+medical_vector_db/
+*.pth
+*.zip
+*.b64
+main.py.integrated
+deploy_*.py
+seed_patient_history.py
+insert_db.py
+test_chroma_usb.py
+
+# OS
+.DS_Store
+Thumbs.db

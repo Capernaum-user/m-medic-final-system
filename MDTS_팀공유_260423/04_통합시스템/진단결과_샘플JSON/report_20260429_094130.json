@@ -1,0 +1,104 @@
+{
+  "ok": true,
+  "filename": "stab_aug_0_yasin_stab_wound (22).jpg",
+  "timestamp": "2026-04-29 09:41:30",
+  "dl": {
+    "prediction": "Stab_wound",
+    "model_prediction": "Stab_wound",
+    "display_name": "자창(Stab Wound)",
+    "model_display_name": "자창(Stab Wound)",
+    "confidence": 1.0,
+    "confidence_percent": 100.0,
+    "top2_margin": 1.0,
+    "top2_margin_percent": 100.0,
+    "low_confidence": false,
+    "ambiguous_prediction": false,
+    "out_of_distribution": false,
+    "is_unknown": false,
+    "in_distribution_similarity": 0.8874743580818176,
+    "in_distribution_similarity_percent": 88.74743580818176,
+    "predicted_class_similarity": 0.8874743580818176,
+    "predicted_class_similarity_percent": 88.74743580818176,
+    "ood_reference_loaded": true,
+    "ood_similarity_threshold": 0.5,
+    "warning_reasons": [],
+    "warning_message": "",
+    "risk": "CRITICAL",
+    "risk_score": 4,
+    "action": "박힌 물체 제거 금지. 압박 지혈. 쇼크 방지 후 즉시 병원 이송.",
+    "law_ref": "선원법 시행규칙 [별표 5의5]",
+    "expected_accidents": [
+      "충돌",
+      "기관손상"
+    ],
+    "top3": [
+      {
+        "class_name": "Stab_wound",
+        "display_name": "자창(Stab Wound)",
+        "confidence": 1.0,
+        "confidence_percent": 100.0
+      },
+      {
+        "class_name": "Laceration",
+        "display_name": "열상(Laceration)",
+        "confidence": 7.156988335310643e-09,
+        "confidence_percent": 7.156988335310643e-07
+      },
+      {
+        "class_name": "Abrasions",
+        "display_name": "찰과상(Abrasions)",
+        "confidence": 1.6339998243353193e-09,
+        "confidence_percent": 1.6339998243353193e-07
+      }
+    ],
+    "device": "cpu"
+  },
+  "ml": {
+    "input": {
+      "연도": "2026",
+      "사고유형": "기관손상",
+      "선박종류": "어선",
+      "사고원인": "기계결함",
+      "발생해역": "남해"
+    },
+    "casualty_probability": 0.2280499078855415,
+    "casualty_probability_percent": 22.80499078855415,
+    "predicted_casualty": false,
+    "risk": "LOW",
+    "risk_score": 1,
+    "feature_importance": {
+      "연도": 0.13361415435450766,
+      "사고유형": 0.3643456212197338,
+      "선박종류": 0.2616930288582909,
+      "사고원인": 0.13097972605037617,
+      "발생해역": 0.10936746951709161
+    },
+    "year_range": [
+      2019,
+      2024
+    ],
+    "error": null
+  },
+  "final": {
+    "is_unknown": false,
+    "risk": "HIGH",
+    "risk_score": 2.7648798526168665,
+    "final_score": 2.7648798526168665,
+    "final_score_percent": 69.12199631542167,
+    "dl_weight": 0.6,
+    "ml_weight": 0.4,
+    "dl_score_norm": 1.0,
+    "ml_score_norm": 0.2280499078855415,
+    "dl_risk": "CRITICAL",
+    "ml_risk": "LOW",
+    "summary": "DL 외상 분류: 자창(Stab Wound) (위험도 CRITICAL) / ML 사상자 발생 확률: 22.80% (위험도 LOW) / 종합 위험등급: HIGH (가중 점수 2.76/4.00)",
+    "summary_lines": [
+      "DL 외상 분류: 자창(Stab Wound) (위험도 CRITICAL)",
+      "ML 사상자 발생 확률: 22.80% (위험도 LOW)",
+      "종합 위험등급: HIGH (가중 점수 2.76/4.00)"
+    ],
+    "action": "가능한 빨리 육지 의료기관 방문. 항행 중 응급처치 + 2차 감염 방지.",
+    "law_ref": "선원법 시행규칙 [별표 5의5]",
+    "wound_action": "박힌 물체 제거 금지. 압박 지혈. 쇼크 방지 후 즉시 병원 이송."
+  }
+}

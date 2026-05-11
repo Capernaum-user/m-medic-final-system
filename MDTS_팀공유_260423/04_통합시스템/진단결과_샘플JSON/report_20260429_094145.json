@@ -1,0 +1,97 @@
+{
+  "ok": true,
+  "filename": "KakaoTalk_20260429_091434979_03.jpg",
+  "timestamp": "2026-04-29 09:41:45",
+  "dl": {
+    "prediction": "UNKNOWN",
+    "model_prediction": "Bruises",
+    "display_name": "확인불가 이미지",
+    "model_display_name": "타박상(Bruises)",
+    "confidence": 0.9314884543418884,
+    "confidence_percent": 93.14884543418884,
+    "top2_margin": 0.8787398934364319,
+    "top2_margin_percent": 87.87398934364319,
+    "low_confidence": false,
+    "ambiguous_prediction": false,
+    "out_of_distribution": true,
+    "is_unknown": true,
+    "in_distribution_similarity": 0.34072113037109375,
+    "in_distribution_similarity_percent": 34.072113037109375,
+    "predicted_class_similarity": 0.34072113037109375,
+    "predicted_class_similarity_percent": 34.072113037109375,
+    "ood_reference_loaded": true,
+    "ood_similarity_threshold": 0.5,
+    "warning_reasons": [
+      "학습 데이터 feature 유사도 34.07%가 기준 50%보다 낮습니다."
+    ],
+    "warning_message": "학습 데이터 feature 유사도 34.07%가 기준 50%보다 낮습니다.",
+    "risk": "UNKNOWN",
+    "risk_score": 0,
+    "action": "학습된 6종 상처 이미지와 충분히 유사하지 않습니다. 상처 부위를 중심으로 더 밝고 선명하게 재촬영하거나 전문가 확인이 필요합니다.",
+    "law_ref": "-",
+    "expected_accidents": [
+      "충돌",
+      "좌초"
+    ],
+    "top3": [
+      {
+        "class_name": "Bruises",
+        "display_name": "타박상(Bruises)",
+        "confidence": 0.9314884543418884,
+        "confidence_percent": 93.14884543418884
+      },
+      {
+        "class_name": "Stab_wound",
+        "display_name": "자창(Stab Wound)",
+        "confidence": 0.05274854972958565,
+        "confidence_percent": 5.274854972958565
+      },
+      {
+        "class_name": "Burns",
+        "display_name": "화상(Burns)",
+        "confidence": 0.008870219811797142,
+        "confidence_percent": 0.8870219811797142
+      }
+    ],
+    "device": "cpu"
+  },
+  "ml": {
+    "input": {
+      "연도": "2026",
+      "사고유형": "기관손상",
+      "선박종류": "어선",
+      "사고원인": "기계결함",
+      "발생해역": "남해"
+    },
+    "casualty_probability": 0.22804990788554153,
+    "casualty_probability_percent": 22.804990788554154,
+    "predicted_casualty": false,
+    "risk": "LOW",
+    "risk_score": 1,
+    "feature_importance": {
+      "연도": 0.13361415435450766,
+      "사고유형": 0.3643456212197338,
+      "선박종류": 0.2616930288582909,
+      "사고원인": 0.13097972605037617,
+      "발생해역": 0.10936746951709161
+    },
+    "year_range": [
+      2019,
+      2024
+    ],
+    "error": null
+  },
+  "final": {
+    "is_unknown": true,
+    "risk": "UNKNOWN",
+    "risk_score": 0.0,
+    "final_score": 0.0,
+    "dl_weight": 0.6,
+    "ml_weight": 0.4,
+    "dl_score_norm": 0.0,
+    "ml_score_norm": 0.0,
+    "summary": "확인불가 이미지로 판정되어 종합 진단을 보류합니다. 재촬영 후 다시 시도하십시오.",
+    "action": "이미지를 더 밝고 선명하게 재촬영하거나 전문 의료진의 직접 판독을 받으십시오.",
+    "law_ref": "-"
+  }
+}

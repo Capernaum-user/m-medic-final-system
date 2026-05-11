@@ -1,0 +1,104 @@
+{
+  "ok": true,
+  "filename": "laceration_aug_0_laseration (10).jpg",
+  "timestamp": "2026-04-29 09:40:43",
+  "dl": {
+    "prediction": "Laceration",
+    "model_prediction": "Laceration",
+    "display_name": "열상(Laceration)",
+    "model_display_name": "열상(Laceration)",
+    "confidence": 0.9999990463256836,
+    "confidence_percent": 99.99990463256836,
+    "top2_margin": 0.9999986886978149,
+    "top2_margin_percent": 99.9998688697815,
+    "low_confidence": false,
+    "ambiguous_prediction": false,
+    "out_of_distribution": false,
+    "is_unknown": false,
+    "in_distribution_similarity": 0.8722665905952454,
+    "in_distribution_similarity_percent": 87.22665905952454,
+    "predicted_class_similarity": 0.8722665905952454,
+    "predicted_class_similarity_percent": 87.22665905952454,
+    "ood_reference_loaded": true,
+    "ood_similarity_threshold": 0.5,
+    "warning_reasons": [],
+    "warning_message": "",
+    "risk": "HIGH",
+    "risk_score": 3,
+    "action": "지혈 및 세척. 깊이 1cm 이상이면 봉합 필요. 감염 징후 관찰.",
+    "law_ref": "선원법 시행규칙 [별표 5의5]",
+    "expected_accidents": [
+      "충돌",
+      "전복"
+    ],
+    "top3": [
+      {
+        "class_name": "Laceration",
+        "display_name": "열상(Laceration)",
+        "confidence": 0.9999990463256836,
+        "confidence_percent": 99.99990463256836
+      },
+      {
+        "class_name": "Stab_wound",
+        "display_name": "자창(Stab Wound)",
+        "confidence": 3.70719448028467e-07,
+        "confidence_percent": 3.70719448028467e-05
+      },
+      {
+        "class_name": "Cut",
+        "display_name": "절상(Cut)",
+        "confidence": 2.9223076580819907e-07,
+        "confidence_percent": 2.9223076580819907e-05
+      }
+    ],
+    "device": "cpu"
+  },
+  "ml": {
+    "input": {
+      "연도": "2026",
+      "사고유형": "기관손상",
+      "선박종류": "어선",
+      "사고원인": "기계결함",
+      "발생해역": "남해"
+    },
+    "casualty_probability": 0.2280499078855415,
+    "casualty_probability_percent": 22.80499078855415,
+    "predicted_casualty": false,
+    "risk": "LOW",
+    "risk_score": 1,
+    "feature_importance": {
+      "연도": 0.13361415435450766,
+      "사고유형": 0.3643456212197338,
+      "선박종류": 0.2616930288582909,
+      "사고원인": 0.13097972605037617,
+      "발생해역": 0.10936746951709161
+    },
+    "year_range": [
+      2019,
+      2024
+    ],
+    "error": null
+  },
+  "final": {
+    "is_unknown": false,
+    "risk": "MEDIUM",
+    "risk_score": 2.164879852616866,
+    "final_score": 2.164879852616866,
+    "final_score_percent": 54.12199631542165,
+    "dl_weight": 0.6,
+    "ml_weight": 0.4,
+    "dl_score_norm": 0.75,
+    "ml_score_norm": 0.2280499078855415,
+    "dl_risk": "HIGH",
+    "ml_risk": "LOW",
+    "summary": "DL 외상 분류: 열상(Laceration) (위험도 HIGH) / ML 사상자 발생 확률: 22.80% (위험도 LOW) / 종합 위험등급: MEDIUM (가중 점수 2.16/4.00)",
+    "summary_lines": [
+      "DL 외상 분류: 열상(Laceration) (위험도 HIGH)",
+      "ML 사상자 발생 확률: 22.80% (위험도 LOW)",
+      "종합 위험등급: MEDIUM (가중 점수 2.16/4.00)"
+    ],
+    "action": "선내에서 1차 처치 후 24시간 내 의료진 자문 권고. 감염·통증 관찰.",
+    "law_ref": "선원법 시행규칙 [별표 5의5]",
+    "wound_action": "지혈 및 세척. 깊이 1cm 이상이면 봉합 필요. 감염 징후 관찰."
+  }
+}

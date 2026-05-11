@@ -1,0 +1,7 @@
+{
+  "error": "이미지 로드 실패: [Errno 2] No such file or directory: 'D:\\\\GeminiUniverse\\\\vscode-workspace\\\\wip-maritime-medic\\\\M_MEDIC_v2\\\\01_data\\\\raw\\\\wound_segmentation\\\\data_wound_seg\\\\train_images\\\\fusc_0081.png'",
+  "timestamp": "2026-04-22 17:50:25",
+  "image": "D:\\GeminiUniverse\\vscode-workspace\\wip-maritime-medic\\M_MEDIC_v2\\01_data\\raw\\wound_segmentation\\data_wound_seg\\train_images\\fusc_0081.png",
+  "patient_age": 45.0,
+  "patient_gender": "unknown"
+}
