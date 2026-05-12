@@ -1,4 +1,4 @@
-# ⚓ M-MEDIC: AI Assistant Handover Guide (v2.2)
+# ⚓ MDTS: AI Assistant Handover Guide (v2.3)
 **Target:** Senior AI Engineer / System Architect
 **Date:** 2026-05-11
 **Status:** Phase 4 (Remote DB Vitals Sync + RAG/MCP) Completed
@@ -6,7 +6,7 @@
 ---
 
 ## 1. 🏗️ System Architecture Overview
-The M-MEDIC system is a hybrid Edge-AI medical support platform designed for maritime environments (Offline-first, with Remote DB Sync).
+The MDTS system is a hybrid Edge-AI medical support platform designed for maritime environments (Offline-first, with Remote DB Sync).
 
 - **Jetson Nano (AI Engine):** 192.168.219.110 (yahboom/yahboom)
   - Runs **Ollama (Llama 3.2 1B)** for medical reasoning.

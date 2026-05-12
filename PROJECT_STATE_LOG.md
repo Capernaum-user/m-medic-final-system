@@ -1,4 +1,4 @@
-# ⚓ M-MEDIC Project: Technical State & Implementation Log
+# ⚓ MDTS Project: Technical State & Implementation Log
 **Last Updated:** 2026-05-11
 **Status:** AI Integration Active, Hybrid Vector DB Established
 
